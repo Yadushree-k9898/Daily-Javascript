@@ -82,15 +82,49 @@ let regex = /the/gi; // 'g' for global search, 'i' for case-insensitive search
 console.log(u.match(regex)); // Output: [ 'The', 'the' ]
 
 
-// repeat 
+// repeat()-- it returns a new string which contains the specified number of copies of the original string.
+let v = 'Hello';
+console.log(v.repeat(3)); // Output: HelloHelloHello
 
-// match 
-// replace
-// search
-// split
 
-// substr 
-// substring 
-// toLowerCase
-// toUpperCase
-// trim
+// replace() -- it replaces a specified string with another string in a string.
+let w = 'I love JavaScript';
+console.log(w.replace('JavaScript', 'Python')); // Output: I love Python
+
+
+// replace() -- it replaces all occurrences of a specified string with another string in a string.
+let x = 'I love JavaScript. JavaScript is great.';
+console.log(x.replace(/JavaScript/g, 'Python')); // Output: I love Python. Python is great.
+
+
+// search() -- it searches a string for a specified value and returns the position of the match. If not found, it returns -1.
+let y = 'Hello World';
+console.log(y.search('World')); // Output: 6
+
+
+// split() -- it splits a string into an array of substrings based on a specified separator.
+let z = '30 days of JavaScript';
+console.log(z.split(' ')); // Output: [ '30', 'days', 'of', 'JavaScript' ]
+
+
+// substr() -- it extracts a substring from a string, starting at a specified index and extending for a specified number of characters.
+let a = 'Hello World';
+console.log(a.substr(0, 5)); // Output: Hello
+
+// substring() -- it extracts a substring from a string between two specified indices.
+let b = 'Hello World';
+console.log(b.substring(0, 5)); // Output: Hello
+
+
+// toLowerCase() -- it converts a string to lowercase.
+let c = 'HELLO WORLD';
+console.log(c.toLowerCase()); // Output: hello world
+
+
+// toUpperCase() -- it converts a string to uppercase.
+let d = 'hello world';
+console.log(d.toUpperCase()); // Output: HELLO WORLD
+
+// trim() -- it removes whitespace from both ends of a string.
+let e = '   Hello World   '; 
+console.log(e.trim()); // Output: Hello World   
