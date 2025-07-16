@@ -76,10 +76,14 @@ console.log(s.lastIndexOf('7')); // Output: 20
 let t = 'Hello World';
 console.log(t.length); // Output: 11 includes spaces
 
+// match() -- it searches a string for a match against a regular expression, and returns the matches, as an Array object.
+let u = 'The quick brown fox jumps over the lazy dog';
+let regex = /the/gi; // 'g' for global search, 'i' for case-insensitive search
+console.log(u.match(regex)); // Output: [ 'The', 'the' ]
 
 
-// match 
 // repeat 
+
 // match 
 // replace
 // search
