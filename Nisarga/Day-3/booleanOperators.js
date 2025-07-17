@@ -28,3 +28,16 @@ console.log(undefined); // Output: undefined
 // the boolean false
 // '', "", ``, empty string
 
+
+// Operartors 
+ // Assignment Operators -- an equal sign in JavaScript is an assignment operator. It assigns the value on the right to the variable on the left.
+
+// Arithmetic Operators
+// Arithmetic operators are mathematical operators.
+
+// Addition(+): a + b
+// Subtraction(-): a - b
+// Multiplication(*): a * b
+// Division(/): a / b
+// Modulus(%): a % b
+// Exponential(**): a ** b
