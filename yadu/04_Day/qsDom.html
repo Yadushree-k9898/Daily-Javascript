@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            border: 2px solid green;
+        }
+        .big{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Welcome</h1>
+    <button onclick="changeColor()">Change Color</button>
+    <p class="msg">Hello!</p>
+    <button onclick="updateText()">Update Text</button>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+    <ul>
+        <li class="item">One</li>
+        <li class="item">Two</li>
+    </ul>
+    <button onclick="hightFirst()">Hight First</button>
+    <button onclick="highLightItems()">HighLight</button>
+    <button onclick="makeBold()">Bold Second Element</button>
+    <input type="text" id="myInput" placeholder="type here something...">
+    <button onclick="setValue()">Set value</button>
+    <button onclick="addClass()">Add Highlight</button>
+    <button onclick="countItems()">Count</button>
+    <button onclick="updateAll()">Update Texts</button>
+
+    <p class="msg"> Click here to toggle</p>
+    <button onclick="toggleClass()">Toggle</button>
+
+<script>
+    function changeColor(){
+        document.querySelector('h1').style.color = 'blue'
+    }
+
+    function updateText(){
+        document.querySelector('.msg').innerHTML = "Updated Message🤩"
+    }
+
+  
+    function makeBold(){
+        document.querySelector('ul li:nth-child(2)').style.fontWeight = 'bold'
+    }
+
+   function setValue(){
+    document.querySelector('#myInput').value = 'Here is Input'
+   }
+
+   function highLightItems(){
+    const allItems = document.querySelectorAll('.item');
+    allItems.forEach(item => item.style.backgroundColor ='purple')
+   }
+
+   function hightFirst(){
+    document.querySelectorAll('.item')[0].style.display = 'none'
+   }
+
+   function addClass(){
+    document.querySelectorAll('.item')[1].classList.add('highlight')
+   }
+
+
+   function countItems(){
+    const items = document.querySelectorAll('.item');
+    alert(`There are ${items.length} items`)
+   }
+
+   function updateAll(){
+    const items = document.querySelectorAll('.item');
+    items.forEach((el, i) => el.innerText = `Item ${i+1}`)
+   }
+
+   function toggleClass(){
+    document.querySelector('.msg').classList.toggle('big')
+   }
+</script>
+</body>
+</html>

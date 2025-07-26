@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dynamic-title{
+            color: teal;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+   <button onclick="add()">ADD</button>
+   <ul id="myList"></ul>
+   <button onclick="addItem()">Add Item</button>
+
+   <div id="btnArea"></div>
+
+   <button onclick="addImage()">Add Image</button>
+
+   <button onclick="createBox()">Create Box</button>
+   <button onclick="addInput()">Add Input</button>
+
+   <button onclick="addHeading()">Add Heading</button>
+   <button onclick="addMany()">Add 5 boxes</button>
+   <button onclick="addTexts()">Add Span text</button>
+   <button onclick="nestedElement()">Add Nest</button>
+
+    <script>
+
+        const btn = document.createElement('button');
+        btn.innerText = 'Click me';
+        btn.onclick = () => alert("You clicked!");
+        document.getElementById('btnArea').appendChild(btn)
+
+        function addImage(){
+            const img = document.createElement("img");
+            img.src = "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx";
+            img.alt= 'smaple1';
+            document.body.appendChild(img) 
+        }
+
+
+        function add(){
+            const p = document.createElement('p');
+            p.innerText = 'This is p tag...';
+            document.body.appendChild(p)
+        }
+
+
+
+        function addItem(){
+            const li = document.createElement('li');
+            li.textContent = "New list item";
+            document.getElementById('myList').appendChild(li)
+        }
+
+        function createBox(){
+            const div = document.createElement('div');
+            div.innerText = "This is the box created";
+            div.style.width = "450px";
+            div.style.height = "400px";
+            div.style.backgroundColor = 'pink';
+            div.style.margin = '10px';
+            document.body.appendChild(div);
+
+        }
+
+        function addInput(){
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'type here something...';
+            document.body.appendChild(input)
+        }
+
+        function addHeading(){
+            const h1 = document.createElement('h1');
+            h1.innerText = "This is heading h1";
+            h1.className = "dynamic-title";
+            document.body.appendChild(h1)
+
+        }
+
+        function addMany(){
+            for(let i =1; i <=5; i++){
+                const div = document.createElement('div');
+                div.textContent = `Box ${i}`;
+                div.style.border = "1px solid black";
+                div.style.margin = '5px';
+                document.body.appendChild(div);
+            }
+        }
+
+        function addTexts(){
+            const span = document.createElement('span');
+            const text = document.createTextNode("Hello from span!");
+            span.appendChild(text);
+            document.body.appendChild(span)
+        }
+
+
+        function nestedElement(){
+            const outer = document.createElement("div");
+            outer.style.border = "1px solid gray";
+            outer.style.padding = "10px";
+
+            const inner = document.createElement('div');
+            inner.innerText = "Im nested inside a div";
+
+
+            outer.appendChild(inner);
+            document.body.appendChild(outer)
+        }
+       
+    </script>
+</body>
+</html>
