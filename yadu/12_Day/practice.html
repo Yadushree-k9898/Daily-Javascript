@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is BMW Lane</h1>
+    <button id="demo">Demo</button>
+    
+    <script>
+        class Car{
+            constructor(name, year){
+                this.name = name;
+                this.year = year;
+
+            }
+            age(){
+                const date = new Date();
+                return date.getFullYear() - this.year
+            }
+        }
+
+        const myCar = new Car("Ford", 2014);
+        document.getElementById("demo").innerHTML = 
+        "My Car is " + myCar.age() + " years old"
+    </script>
+</body>
+</html>

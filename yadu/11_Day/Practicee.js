@@ -4,32 +4,26 @@ const promise = new Promise((resolve, reject) =>{
 
 promise.then(result => console.log(result)
 );
-
 const failPromise = new Promise((resolve, reject) =>{
     setTimeout(()=> reject("Error occured"), 3000)
 })
 
 failPromise.catch(error => console.log(error)
 );
-
 new Promise(resolve => resolve(6))
 .then(num => num * 3)
 .then(num => num+ 10)
 .then(result => console.log(result)
 );
 
-
 new Promise(resolve => resolve(10))
 .then(num => new Promise(res => setTimeout(() => res(num * 2), 1000)))
 .then(result => console.log(result)
 );
 
-
 new Promise(()=>{ throw new Error("Fail")})
 .catch(err => console.log(err.message)
 );
-
-
 Promise.resolve("Data Loaded...")
 .finally(()=> console.log("Cleaning up..."))
 .then(data => console.log(data))
