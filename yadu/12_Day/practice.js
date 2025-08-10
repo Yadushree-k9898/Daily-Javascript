@@ -18,9 +18,6 @@ class Car1{
         return x - this.year
     }
 }
-
-
-
 const myCar = new Car1("Ford", 2014);
 // console.log("My car is", myCar.age(year) , " years old");
 
