@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changeBg()">Change Background</button>
+    <button id="counterBtn">Click me</button>
+    <p id="count"></p>
+    <input type="text" id="input" placeholder="Type something">
+    <p id="output"></p>
+    <h1 id="main-title">Hello World</h1>
+    <h1 id="heading">Hello World</h1>
+    <button onclick="changeText()">Change text</button>
+    <p class="intro">This is paragraph one.</p>
+    <p class="intro">This is paragrah two</p>
+    <p id="para">This is a paragragh.</p>
+    <button onclick="changeStyle()">Change Color</button>
+    <ul id="list">
+        <li>Apple</li>
+        <li>Banana</li>
+    </ul>
+    <div id="hoverBox" style="width:100px;height:100px;background:lightblue;"></div>
+
+    <div id="box">Remove me!</div>
+    <button onclick="removeBox()">Remove</button>
+    <div name="info">Named element</div>
+    <span data-custom="123">Custom data</span>
+    <button onclick="addItem()">Add Item</button>
+    <p id="text">You can hide me.</p>
+    <button onclick="toggleText()">Toggle</button>
+
+    <script>
+        function changeBg(){
+            let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor
+        }
+        let count = 0;
+        document.getElementById("counterBtn").addEventListener("click", ()=>{
+            count++;
+            document.getElementById("count").textContent = count
+        })
+        document.getElementById("input").addEventListener("input", (e) =>{
+            document.getElementById("output").textContent = "You typed: " + e.target.value
+        })
+        document.getElementById('hoverBox').addEventListener("mouseover", ()=>{
+            document.getElementById("hoverBox").style.background = "orange"
+        })
+        function toggleText(){
+            let el = document.getElementById('text');
+            el.style.display = (el.style.display === "none") ? "block" : "none"
+        }
+        function addItem(){
+            let li = document.createElement('li');
+            li.textContent = "New Item";
+            document.getElementById('list').appendChild(li)
+        }
+        function changeText(){
+            document.getElementById("heading").textContent = "Text Changed!"
+        }
+
+        function removeBox(){
+            document.getElementById('box').remove()
+        }
+
+        function changeStyle(){
+            document.getElementById("para").style.color="red"
+        }
+        const title = document.getElementById("main-title");
+        console.log("1:", title.innerText);
+
+        const intros = document.getElementsByClassName('intro');
+        console.log("2:", intros[0].innerText);
+
+        const listItems = document.getElementsByTagName('li');
+        console.log("3.", listItems.length);
+
+        const infoDiv = document.getElementsByName("info");
+        console.log("4.", infoDiv[0].innerText);
+
+        const firstIntro = document.querySelector(".intro");
+        console.log("5.", firstIntro.innerText);
+
+        const allIntro = document.querySelectorAll('.intro');
+        console.log("6.", allIntro.length);
+
+        const ulItem = document.querySelector("ul li");
+        console.log("7.", ulItem.innerText);
+
+        const customData = document.querySelector("[data-custom]");
+        console.log("8.", customData.getAttribute("data-custom"));
+
+        const secondItem = document.querySelector("ul li:nth-child(2)");
+        console.log("9:", secondItem.innerText);
+
+        const multiple = document.querySelectorAll("h1, .intro");
+        console.log("10: Total matches=", multiple.length)
+    </script>
+</body>
+</html>

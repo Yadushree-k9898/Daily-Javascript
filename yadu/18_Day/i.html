@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Hello World</h1>
+    <p id="para">This is a paragraph....</p>
+    <input type="text" id="name" value="John">
+    <button id="btn1">Change text</button>
+    <button id="btn2"> Change Color</button>
+    <button id="btn3"> Change Value</button>
+    <button id="btn4">Hide</button>
+    <button id="btn5">Show</button>
+
+    <script>
+        document.getElementById('btn1').onclick = () =>{
+            document.getElementById("title").textContent = "Title Changed!"
+        }
+        document.getElementById('btn2').onclick = () =>{
+            document.getElementById("para").style.color = "red"
+        }
+        document.getElementById('btn3').onclick = () =>{
+            document.getElementById("name").value = "Alice"
+        }
+        document.getElementById('btn4').onclick = () =>{
+            document.getElementById('para').style.display = "none"
+        }
+        document.getElementById('btn5').onclick = () =>{
+            document.getElementById('para').style.display = "block"
+        }
+        document.getElementById('para').ondblclick = () =>{
+            document.getElementById('para').textContent += " MOre text added"
+        }
+    </script>
+</body>
+</html>

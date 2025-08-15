@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="item">Apple</p>
+    <p class="item">Banana</p>
+    <p class="item">Cherry</p>
+    <button id="btn1">Change Color</button>
+    <button id="btn2">UpperCase</button>
+    <button id="btn3">Add Border</button>
+    <button id="btn4">Change Background</button>
+    <button id="btn5">Increase Font</button>
+    <button id="btn6">Number List</button>
+    <button id="btn7">Hide All</button>
+
+    <script>
+        const items = document.getElementsByClassName("item");
+
+        document.getElementById("btn1").onclick = () =>{
+            for(let el of items ) el.style.color = "blue";
+        };
+
+        document.getElementById('btn2').onclick = () =>{
+            for(let el of items) el.textContent = el.textContent.toUpperCase()
+        };
+        document.getElementById('btn3').onclick = () => {
+            for(let el of items) el.style.border = "1px solid black"
+        }
+        document.getElementById('btn4').onclick = () =>{
+            for(let el of items) el.style.background = "lightyellow"
+        };
+        document.getElementById('btn5').onclick = () =>{
+            for(let el of items) el.style.fontSize = "20px"
+        };
+        document.getElementById('btn6').onclick = () =>{
+            for(let i = 0; i < items.length; i++){
+                items[i].textContent = `${i+1}. ${items[i].textContent}`
+            }
+        }
+        document.getElementById('btn7').onclick = () =>{
+            for(let el of items) el.style.display = "none"
+        }
+    </script>
+</body>
+</html>

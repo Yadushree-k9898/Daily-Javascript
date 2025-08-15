@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 class="heading">Hello</h1>
+<p id="desc">Description here</p>
+<input type="text" value="Type here">
+<button id="btn1">Select by Class</button>
+<button id="btn2">Select by ID</button>
+<button id="btn3">Change Input</button>
+<button id="btn4">Change Background</button>
+<button id="btn5">Add Emoji</button>
+<button id="btn6">Bold Text</button>
+<button id="btn7">Hide Heading</button>
+<script>
+
+    document.getElementById('btn1').onclick = () =>{
+        document.querySelector('.heading').style.color = "red"
+    }
+    document.getElementById('btn2').onclick = () =>{
+        document.querySelector("#desc").textContent = "Updated description"
+    }
+    document.getElementById('btn3').onclick = () =>{
+        document.querySelector("input").value = "Changed"
+    }
+    document.getElementById('btn4').onclick = () =>{
+        document.querySelector('body').style.background = "lightblue"
+    }
+    document.getElementById('btn5').onclick = () =>{
+        document.querySelector('.heading').textContent += " 😀"
+    }
+    document.getElementById('btn6').onclick = () =>{
+        document.querySelector("#desc").style.fontWeight = "bold"
+    }
+    document.getElementById("btn7").onclick = () =>{
+        document.querySelector('.heading').style.display = "none"
+    }
+</script>
+</body>
+</html>
