@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Guess the Number(1-100)</h2>
+    <input type="number" id="guessInput"/>
+    <button onclick="checkGuess()">Guess</button>
+    <p id="result"></p>
+    <script>
+        let secret = Math.floor(Math.random() * 100 ) + 1
+
+        function checkGuess(){
+            const guess = parseInt(document.getElementById('guessInput').value);
+            const result = document.getElementById("result")
+
+            if(guess === secret){
+                result.textContent = "Correct! You  guessed it!"
+            } else if(guess < secret){
+                result.textContent = "Too low , try again"
+            }else{
+                result.textContent = "Too high, try again"
+            }
+        }
+    </script>
+</body>
+</html>
