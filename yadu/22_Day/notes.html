@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Notes App</h2>
+    <textarea id="noteInput" placeholder="Write a note"></textarea><br>
+    <button onclick="addNote()">Add Note</button>
+    <ul id="noteList"></ul>
+
+    <script>
+        function addNote(){
+            let input = document.getElementById('noteInput');
+            let note = input.value.trim();
+            if(note === "") return;
+
+            let li = document.createElement('li');
+            li.textContent = note;
+
+            let btn = document.createElement('button');
+            btn.textContent = 'DELETE';
+            btn.onclick = () => li.remove();
+
+            li.appendChild(btn);
+            document.getElementById("noteList").appendChild(li);
+            input.value = ''
+        }
+    </script>
+</body>
+</html>
