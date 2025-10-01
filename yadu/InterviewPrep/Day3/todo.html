@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo App</title>
+ 
+</head>
+<body>
+  <h2>Todo App</h2>
+  <input type="text" id="todo-input" placeholder="Enter todo">
+  <button onclick="addTodo()">Add</button>
+  <button onclick="fetchTodos()">Fetch API Todos</button>
+  
+  <ul id="todo-list"></ul>
+
+  <script>
+    const list = document.getElementById("todo-list");
+
+    function addTodo() {
+      let input = document.getElementById("todo-input");
+      if (input.value.trim() !== "") {
+        let li = document.createElement("li");
+        li.textContent = input.value;
+        list.appendChild(li);
+        input.value = "";
+      }
+    }
+
+    async function fetchTodos() {
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=5");
+      const data = await res.json();
+      data.forEach(todo => {
+        let li = document.createElement("li");
+        li.textContent = todo.title + (todo.completed ? " ✅" : " ❌");
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
